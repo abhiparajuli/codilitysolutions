@@ -111,23 +111,4 @@ public class TapeEquilibrium {
 		return minDiff;
     }
 	
-	//more efficient algorithm needed
-	public int solution2(int[] A) {
-        // Implement your solution here
-		if(A.length==0) {
-			return 0;
-		}
-		if(A.length==1) {
-			return A[0];
-		}
-		
-		int sums[] = new int[A.length-1];
-		for (int p=1; p < A.length; p++) {
-			sums[p-1] = getAbsDiff(A, p);
-		}
-		
-		int minDiff = Arrays.stream(sums).min().getAsInt();
-		return minDiff;
-    }
-	
 }
